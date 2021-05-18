@@ -6,25 +6,8 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes: [
     {
-      path: '/builder/:id?',
-      component: () => import('@/plugins/builder/BuilderEditor.vue'),
-    },
-    {
-      path: '/automation/:id?',
+      path: '/:id?',
       component: () => import('@/plugins/automation/AutomationLayout.vue'),
-    },
-    {
-      path: '/',
-      component: () => import('@/layouts/DefaultLayout.vue'),
-      children: [
-        { path: '', component: () => import('@/pages/IndexPage.vue') },
-        { path: '/admin', component: () => import('@/pages/AdminPage.vue') },
-        { path: '/styles', component: () => import('@/pages/StylesPage.vue') },
-        // dynamic pages
-        { path: '/dashboard/:id', component: () => import('@/pages/DashboardPage.vue') },
-        { path: '/service/:id', component: () => import('@/pages/ServicePage.vue') },
-        { path: '/brewery/:id?', component: () => import('@/plugins/builder/BreweryPage.vue') },
-      ],
     },
 
     { // Always leave this as last one
@@ -33,7 +16,7 @@ const router = new VueRouter({
     },
   ],
   mode: 'history',
-  base: '/ui/',
+  base: '/automation-ui/',
 });
 
 // Strip hash on fresh page loads

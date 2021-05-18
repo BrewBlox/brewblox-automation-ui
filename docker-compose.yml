@@ -64,7 +64,7 @@ services:
     command: >-
       --api.dashboard=true
       --providers.docker=true
-      --providers.docker.constraints="Label(`com.docker.compose.project`, `brewblox-ui`)"
+      --providers.docker.constraints="Label(`com.docker.compose.project`, `brewblox-automation-ui`)"
       --providers.docker.defaultrule="PathPrefix(`/{{ index .Labels \"com.docker.compose.service\" }}`)"
       --providers.file.directory=/config
       --entrypoints.web.address=:9000

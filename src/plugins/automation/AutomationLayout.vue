@@ -86,7 +86,7 @@ export default class AutomationPage extends Vue {
   applyActive(templateId: string | null, stepId: string | null): void {
     automationStore.setActive([templateId, stepId]);
     if (templateId && templateId !== this.templateId) {
-      this.$router.replace(`/automation/${templateId}`).catch(() => { });
+      this.$router.replace(`/${templateId}`).catch(() => { });
     }
   }
 
@@ -207,8 +207,6 @@ export default class AutomationPage extends Vue {
     <LayoutFooter />
 
     <q-drawer v-model="drawerOpen" content-class="column" elevated>
-      <SidebarNavigator />
-
       <q-scroll-area
         class="col"
         :thumb-style="{opacity: 0.5, background: 'silver'}"

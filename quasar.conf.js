@@ -75,7 +75,7 @@ module.exports = configure(function (ctx) {
 
       // Root path for the UI is /ui/ to prevent the backend proxy to having to route
       // wildcard requests to the UI
-      publicPath: '/ui/',
+      publicPath: '/automation-ui/',
       vueRouterMode: 'history',
 
       distDir: 'dist',
